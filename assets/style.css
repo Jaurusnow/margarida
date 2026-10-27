@@ -1,0 +1,53 @@
+/* Margarida — draft stylesheet. System fonts only, no external requests. */
+:root{
+  --bg:#fbf7f2; --surface:#ffffff; --text:#2b2724; --muted:#5a524c;
+  --accent:#7a4a3a; --accent-dark:#5e3729; --soft:#efe4d8; --sage:#e6ece4;
+  --todo-bg:#fff3c4; --todo-text:#5c4700; --radius:14px; --maxw:46rem;
+}
+*{box-sizing:border-box}
+html{font-size:112.5%; -webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,"Times New Roman",serif;
+  line-height:1.65}
+h1,h2,h3{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.25;color:var(--text)}
+h1{font-size:clamp(1.9rem,5vw,2.7rem);margin:.2em 0 .5em;font-weight:600}
+h2{font-size:clamp(1.35rem,3.4vw,1.75rem);margin:0 0 .6em;font-weight:600}
+p,li{max-width:40rem}
+a{color:var(--accent-dark);text-underline-offset:.18em}
+a:hover{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:.6rem 1rem;z-index:10}
+.skip:focus{left:1rem;top:1rem}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem}
+header.site{padding:1rem 0;border-bottom:1px solid var(--soft)}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;font-weight:600;font-size:1.05rem;text-decoration:none;color:var(--text)}
+.lang{display:flex;gap:.4rem;list-style:none;margin:0;padding:0;font-family:system-ui,sans-serif;font-size:.95rem}
+.lang a,.lang span{display:inline-block;padding:.35rem .7rem;border-radius:999px;text-decoration:none;min-height:44px;line-height:1.9}
+.lang span[aria-current]{background:var(--soft);font-weight:600}
+.lang a{border:1px solid var(--soft)}
+section{padding:2.6rem 0;border-bottom:1px solid var(--soft)}
+section:last-of-type{border-bottom:0}
+.hero{padding:3rem 0 2.6rem}
+.hero .lead{font-size:1.2rem;color:var(--muted)}
+.btn{display:inline-block;background:var(--accent-dark);color:#fff;text-decoration:none;
+  font-family:system-ui,sans-serif;font-weight:600;padding:.9rem 1.5rem;border-radius:999px;min-height:48px;margin-top:.6rem}
+.btn:hover{background:var(--accent);color:#fff}
+.about{display:grid;gap:1.6rem;align-items:center}
+.about img{width:100%;max-width:260px;height:auto;border-radius:50%;display:block}
+blockquote{margin:0;font-size:1.2rem;font-style:italic;border-left:4px solid var(--soft);padding-left:1rem}
+ul.soft{padding-left:1.2rem} ul.soft li{margin:.45rem 0}
+.card{background:var(--surface);border-radius:var(--radius);padding:1.3rem 1.4rem;border:1px solid var(--soft)}
+.note{background:var(--sage);border-radius:var(--radius);padding:1.4rem}
+.note h2{font-size:1.25rem}
+.note dl{margin:0} .note dt{font-weight:700;margin-top:.8rem;font-family:system-ui,sans-serif}
+.note dd{margin:0}
+.todo{background:var(--todo-bg);color:var(--todo-text);font-family:system-ui,sans-serif;font-size:.85em;padding:.05em .35em;border-radius:4px;font-style:normal}
+.draft-banner{background:var(--todo-bg);color:var(--todo-text);text-align:center;font-family:system-ui,sans-serif;font-size:.85rem;padding:.4rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+@media (min-width:760px){
+  .about{grid-template-columns:260px 1fr}
+  section{padding:3.4rem 0}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
